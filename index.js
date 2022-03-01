@@ -25,7 +25,9 @@ async function getProposals() {
     proposals.forEach((p) => {
         message += (":" + p.platform + ": <" + p.link + "|*Proposal " + p.id + "*> _" + p.state + "_: " + p.title + "\n\n");
     })
-        
+    if (message == "") {
+        message = "No new proposals!"
+    }
     return message;
 }
 
